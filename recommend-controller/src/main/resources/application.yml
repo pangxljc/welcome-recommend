@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mytest
+    username: root
+    password: 1234
+
+
+mybatis:
+  config-localtion: classpath:sqlmap/sqlmap-config.xml
+  type-aliases-package: com.welcome.recommend.model
+
+##pagehelper分页插件
+#pagehelper:
+#    helperDialect: mysql
+#    reasonable: true
+#    supportMethodsArguments: true
+#    params: count=countSql
