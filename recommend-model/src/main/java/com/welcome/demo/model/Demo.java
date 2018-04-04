@@ -1,4 +1,4 @@
-package com.welcome.demo;
+package com.welcome.demo.model;
 
 public class Demo {
     private int user_id;

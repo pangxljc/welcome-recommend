@@ -4,14 +4,15 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mytest
+    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 1234
 
 
 mybatis:
   config-localtion: classpath:sqlmap/sqlmap-config.xml
-  type-aliases-package: com.welcome.recommend.model
+  mapper-locations: classpath:sqlmap/demo/*.xml
+  type-aliases-package: com.welcome.demo.model
 
 ##pagehelper分页插件
 #pagehelper:

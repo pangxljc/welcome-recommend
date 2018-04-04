@@ -1,6 +1,6 @@
 package com.welcome.recommend.controller;
 
-import com.welcome.demo.Demo;
+import com.welcome.demo.model.Demo;
 import com.welcome.demo.DemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.welcome.demo.query;
+package com.welcome.demo.model.query;
 
 import java.util.List;
 

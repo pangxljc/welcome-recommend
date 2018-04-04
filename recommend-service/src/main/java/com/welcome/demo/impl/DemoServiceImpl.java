@@ -1,7 +1,7 @@
 package com.welcome.demo.impl;
 
 
-import com.welcome.demo.Demo;
+import com.welcome.demo.model.Demo;
 import com.welcome.demo.DemoDao;
 import com.welcome.demo.DemoService;
 import org.springframework.stereotype.Component;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="demo">
     <!--结果集-->
-    <resultMap id="demoResult" type="com.welcome.demo.Demo">
+    <resultMap id="demoResult" type="com.welcome.demo.model.Demo">
         <result property="user_id" column="user_id"/>
         <result property="user_name" column="user_name"/>
         <result property="password" column="password"/>
