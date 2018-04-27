@@ -1,9 +1,9 @@
-package com.welcome.demo.impl;
+package com.welcome.demo.service.impl;
 
 
 import com.welcome.demo.model.Demo;
-import com.welcome.demo.DemoDao;
-import com.welcome.demo.DemoService;
+import com.welcome.demo.dao.DemoDao;
+import com.welcome.demo.service.DemoService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

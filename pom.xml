@@ -63,6 +63,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.35</version>
 		</dependency>
+		<!--mybatis generator 自动生成代码插件-->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.2</version>
+		</dependency>
 
 	</dependencies>
 
@@ -72,17 +78,33 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- mybatis generator 自动生成代码插件 -->
-			<!--<plugin>-->
-				<!--<groupId>org.mybatis.generator</groupId>-->
-				<!--<artifactId>mybatis-generator-maven-plugin</artifactId>-->
-				<!--<version>1.3.2</version>-->
-				<!--<configuration>-->
-					<!--<configurationFile>welcome-recommend/recommend-controller/src/main/resources/generator</configurationFile>-->
-					<!--<overwrite>true</overwrite>-->
-					<!--<verbose>true</verbose>-->
-				<!--</configuration>-->
-			<!--</plugin>-->
+			 <!--mybatis generator 自动生成代码插件-->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<executions>
+					<execution>
+						<id>Generate MyBatis Artifacts</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- generator 工具配置文件的位置 -->
+					<configurationFile>src/main/resources/generator/generatorConfig.xml</configurationFile>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<classifier>exec</classifier>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

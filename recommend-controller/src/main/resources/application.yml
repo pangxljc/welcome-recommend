@@ -10,8 +10,7 @@ spring:
 
 
 mybatis:
-  config-localtion: classpath:sqlmap/sqlmap-config.xml
-  mapper-locations: classpath:sqlmap/demo/*.xml
+  config-location: classpath:sqlmap/sqlmap-config.xml
   type-aliases-package: com.welcome.demo.model
 
 ##pagehelper分页插件

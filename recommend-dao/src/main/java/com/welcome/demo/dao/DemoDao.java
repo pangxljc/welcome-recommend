@@ -1,10 +1,9 @@
-package com.welcome.demo;
-
+package com.welcome.demo.dao;
 
 import com.welcome.demo.model.Demo;
 
 import java.util.List;
 
-public interface DemoService {
+public interface DemoDao {
     List<Demo> getDemoAll(Demo demo);
 }
