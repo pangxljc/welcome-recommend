@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="user">
+    <!--结果集-->
+    <resultMap id="userResult" type="com.welcome.recommend.model.user.User">
+        <result property="userId" column="userid"/>
+        <result property="userName" column="username"/>
+        <result property="password" column="password"/>
+        <result property="registerTime" column="registertime"/>
+        <result property="lastLoginTime" column="lastlogintime"/>
+        <result property="email" column="email"/>
+    </resultMap>
+    <!--查询字段-->
+    <sql id="userField">
+        userid,username,password,registertime,lastlogintime,email
+    </sql>
+    <!--查询条件-->
+    <sql id="condition">
+        <where>
+            <if test="userId != null and userId != ''">
+                userid = #{userId}
+            </if>
+            <if test="userName != null and userName != ''">
+                AND username = #{userName}
+            </if>
+            <if test="password != null and password != ''">
+                AND password = #{password}
+            </if>
+            <if test="registerTime != null and registerTime != ''">
+                AND registertime = #{registerTime}
+            </if>
+            <if test="lastLoginTime != null and lastLoginTime != ''">
+                AND lastlogintime = #{lastLoginTime}
+            </if>
+            <if test="email != null and email != ''">
+                AND email = #{email}
+            </if>
+        </where>
+    </sql>
+
+    <!--修改条件-->
+    <sql id="updateByCondition">
+        <where>
+            <if test="parameter.userId != null and parameter.userId != ''">
+                userid = #{userId}
+            </if>
+            <if test="parameter.userName != null and parameter.userName != ''">
+                AND username = #{userName}cond
+            </if>
+            <if test="parameter.password != null and parameter.password != ''">
+                AND password = #{password}
+            </if>
+            <if test="parameter.registerTime != null and parameter.registerTime != ''">
+                AND registertime = #{registerTime}
+            </if>
+            <if test="parameter.lastLoginTime != null and parameter.lastLoginTime != ''">
+                AND lastlogintime = #{lastLoginTime}
+            </if>
+            <if test="parameter.email != null and parameter.email != ''">
+                AND email = #{email}
+            </if>
+        </where>
+    </sql>
+
+    <!--登录注册-->
+    <insert id="insertUser" parameterType="user">
+        INSERT INTO user
+              (userid,username,password,registertime,lastlogintime,email)
+        VALUE
+              (#{userId,jdbcType=INTEGER},#{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{registerTime,jdbcType=TIMESTAMP},#{lastLoginTime,jdbcType=TIMESTAMP},#{email,jdbcType=VARCHAR})
+    </insert>
+
+    <!--查询所有-->
+    <select id="selectUserAll" parameterType="user" resultMap="userResult">
+        SELECT
+        <include refid="userField"/>
+        FROM
+        user
+        <include refid="condition"/>
+    </select>
+</mapper>

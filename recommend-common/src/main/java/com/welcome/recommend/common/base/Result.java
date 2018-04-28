@@ -1,4 +1,4 @@
-package com.welcome.recommend.common;
+package com.welcome.recommend.common.base;
 
 import java.io.Serializable;
 import java.util.Collection;

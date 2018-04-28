@@ -1,4 +1,4 @@
-package com.welcome.demo.service.impl;
+package com.welcome.demo.dao.impl;
 
 import com.welcome.demo.model.Demo;
 import com.welcome.demo.dao.DemoDao;

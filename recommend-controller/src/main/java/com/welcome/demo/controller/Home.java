@@ -1,4 +1,4 @@
-package com.welcome.recommend.controller;
+package com.welcome.demo.controller;
 
 import com.welcome.demo.model.Demo;
 import com.welcome.demo.service.DemoService;
